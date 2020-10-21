@@ -1,0 +1,29 @@
+{
+  "products": [
+    {
+      "id": 1,
+      "name": "caneta do matheus",
+      "price": 5
+    },
+    {
+      "id": 2,
+      "name": "notebook do matheus",
+      "price": 3000
+    },
+    {
+      "id": 3,
+      "name": "cadeira do matheus",
+      "price": 500
+    },
+    {
+      "name": "produto top",
+      "price": 18.4,
+      "id": 4
+    },
+    {
+      "name": "produto top",
+      "price": 18.4,
+      "id": 5
+    }
+  ]
+}
