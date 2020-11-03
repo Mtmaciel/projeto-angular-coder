@@ -18,7 +18,7 @@ export class ProductCreateComponent implements OnInit {
   constructor(private ProductService:ProductService,private router :Router) { }
 
   ngOnInit(): void {
-    this.ProductService.showOnConsole('teste de service');
+    
   }
 
   createProduct():void{

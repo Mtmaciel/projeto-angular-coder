@@ -1,11 +1,6 @@
 {
   "products": [
     {
-      "id": 1,
-      "name": "caneta do matheus",
-      "price": 5
-    },
-    {
       "id": 2,
       "name": "notebook do matheus",
       "price": 3000
@@ -16,19 +11,19 @@
       "price": 500
     },
     {
-      "name": "produto top",
-      "price": 18.4,
-      "id": 4
-    },
-    {
-      "name": "produto top",
-      "price": 18.4,
-      "id": 5
-    },
-    {
       "name": "prod form",
-      "price": "98,36",
+      "price": 98.36,
       "id": 6
+    },
+    {
+      "name": "eee",
+      "price": "123",
+      "id": 7
+    },
+    {
+      "name": "erweerw",
+      "price": "123",
+      "id": 8
     }
   ]
 }
