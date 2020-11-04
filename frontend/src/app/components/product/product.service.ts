@@ -25,16 +25,16 @@ export class ProductService {
     })
   }
 
-  create(product: Product): Observable<Product> {
-    return this.http.post<Product>(this.baseUrl, product).pipe(
-      map(obj => obj),
-      catchError(e => this.errorHandler(e))
-    );
-  }
-
   errorHandler(e:any,optioanaltext:string = 'Erro encontrado'):Observable<any>{
     this.showMessage(optioanaltext,true)
     return EMPTY;
+  }
+
+  create(product: Product): Observable<Product> {
+    return this.http.post<Product>(this.baseUrl, product).pipe(
+      map(obj => obj),
+      catchError(e => this.errorHandler(e,'Erro ao inserir o produto'))
+    );
   }
 
   read(): Observable<Product[]> {
