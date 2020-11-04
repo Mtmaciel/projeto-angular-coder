@@ -32,28 +32,40 @@ export class ProductService {
     );
   }
 
-  errorHandler(e:any):Observable<any>{
-    this.showMessage('deu pau!',true)
+  errorHandler(e:any,optioanaltext:string = 'Erro encontrado'):Observable<any>{
+    this.showMessage(optioanaltext,true)
     return EMPTY;
   }
 
   read(): Observable<Product[]> {
-    return this.http.get<Product[]>(this.baseUrl);
+    return this.http.get<Product[]>(this.baseUrl).pipe(
+      map(obj => obj),
+      catchError(e => this.errorHandler(e,'Erro ao ler os produtos'))
+    );
   }
 
   readById(id: string): Observable<Product> {
     const url = `${this.baseUrl}/${id}`
-    return this.http.get<Product>(url);
+    return this.http.get<Product>(url).pipe(
+      map(obj=>obj),
+      catchError(e=>this.errorHandler(e,'Erro ao selecionar o produto'))
+    );
   }
 
   update(product: Product): Observable<Product> {
     const url = `${this.baseUrl}/${product.id}`
-    return this.http.put<Product>(url, product);
+    return this.http.put<Product>(url, product).pipe(
+      map(obj=>obj),
+      catchError(e=>this.errorHandler(e,'Erro ao atualizar o Produto'))
+    );
   }
 
   delete(id: string): Observable<Product> {
     const url = `${this.baseUrl}/${id}`
-    return this.http.delete<Product>(url);
+    return this.http.delete<Product>(url).pipe(
+      map(obj=>obj),
+      catchError(e=>this.errorHandler(e,'Erro ao Excluir o Produto'))
+    );
   }
 
 }
