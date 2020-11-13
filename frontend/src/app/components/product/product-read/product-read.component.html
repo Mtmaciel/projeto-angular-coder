@@ -25,6 +25,9 @@
             <a routerLink="/products/update/{{row.id}}">
                 <i class="edit material-icons">edit</i>
             </a>
+            <button mat-raised-button (click)="deleteProduct(row.id,row.name)">
+              <i class="delete material-icons">delete</i>
+            </button>
             <!-- <a routerLink="/products/delete/{{row.id}}">
                 <i class="delete material-icons">delete</i>
             </a> -->

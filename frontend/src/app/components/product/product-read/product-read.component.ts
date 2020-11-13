@@ -1,3 +1,5 @@
+import { DialogComponent } from './../../plugins/dialog/dialog.component';
+import { Dialog } from './../../plugins/dialog/dialog.model';
 import { ProductService } from './../product.service';
 import { Product } from './../product.model';
 import { Component, OnInit } from '@angular/core';
@@ -21,8 +23,17 @@ export class ProductReadComponent implements OnInit {
     });
   }
 
+  openDeleteDialog(id:number, name:string):void{
+    const dialogRef = this.dialog.open(DialogComponent,{
+      width:'200px',
+      data:{title:"Exclusão de Produto",text:"Deseja confimar exclusao do produto"+name}
+    })
+
+    dialogRef.afterClosed().subscribe(result=>{
+      this.productService.delete(id.toString()).subscribe(() => {
+        this.productService.showMessage('Produto Excluido Com Sucesso')
+      })
+    })
+  }
   
-
-
-
 }

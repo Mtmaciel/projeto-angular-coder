@@ -12,7 +12,8 @@ export class DialogComponent{
   constructor(public dialogRef: MatDialogRef<DialogComponent>,
             @Inject(MAT_DIALOG_DATA) public data: Dialog) { }
 
-  ngOnInit(): void {
+  onNoClick(): void {
+    this.dialogRef.close();
   }
 
 }
